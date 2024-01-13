@@ -19,23 +19,23 @@
             <td>{{ $row->email }}</td>
             <td>{{ trim($row->roles->pluck('name'),'[""]') }}</td>
             <td>{{ $row->created_at->format('j F, Y') }}</td>
-            @canany(['user-edit','user-delete'])
+         
             <td>
                 <div class="btn-group">
-                    @can('user-edit')
+         
                     <button type="button" class="btn btn-primary btn-sm" onclick='getUsersDetails("<?= $row->id ?>")'>
                         <i class="fas fa-edit"></i>
                     </button>
-                    @endcan
+               
 
-                    @can('user-delete')
+               
                     <button type="button" class="btn btn-danger btn-sm" onclick='deleteUsersData("<?= $row->id ?>")'>
                         <i class="far fa-trash-alt"></i>
                     </button>
-                    @endcan
+                
                 </div>
             </td>
-            @endcanany
+       
         </tr>
         @endforeach
 

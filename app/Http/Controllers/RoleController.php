@@ -18,7 +18,7 @@ class RoleController extends Controller
          $this->middleware('permission:role-delete', ['only' => ['destroy']]);
          $this->middleware('permission:role-publish', ['only' => ['status']]);
     }
-
+    
     public function index(Request $request)
     {
         if ($request->ajax()) {

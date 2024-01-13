@@ -25,33 +25,33 @@
                         </div>
                         <div class="clearfix"></div>
                         <ul>
-                            <li class="active"><a href="{{ route('user/dashboard') }}"><i
+                            <li class="active"><a href="{{ route(strtolower(Auth::user()->type).'/dashboard') }}"><i
                                         class="icon-material-outline-dashboard"></i>Dashboard</a></li>
-                            <li><a href="{{ route('user/manage-jobs-post') }}"><i class="icon-line-awesome-user-secret"></i>
+                            <li><a href="{{ route(strtolower(Auth::user()->type).'/manage-jobs-post') }}"><i class="icon-line-awesome-user-secret"></i>
                                     Manage Jobs Post</a></li>
-                            <li><a href="{{ route('user/manage-jobs') }}"><i
+                            <li><a href="{{ route(strtolower(Auth::user()->type).'/manage-jobs') }}"><i
                                         class="icon-material-outline-group"></i>Manage Jobs <span class="nav-tag">5</span></a></li>
-                            <li><a href="{{ route('user/manage-resume') }}"><i
+                            <li><a href="{{ route(strtolower(Auth::user()->type).'/manage-resume') }}"><i
                                         class="icon-material-outline-supervisor-account"></i> Manage Resume</a></li>
-                            <li><a href="{{ route('user/bookmarks-jobs') }}"><i class="icon-feather-heart"></i> Bookmarks
+                            <li><a href="{{ route(strtolower(Auth::user()->type).'/bookmarks-jobs') }}"><i class="icon-feather-heart"></i> Bookmarks
                                     Jobs</a></li>
                             <li><a href="#"><i class="icon-line-awesome-file-text"></i>
                                     Freelancer Tasks</a>
                                 <ul class="dropdown-nav">
-                                    <li><a href="{{ route('user/dashboard') }}"><i
+                                    <li><a href="{{ route(strtolower(Auth::user()->type).'/dashboard') }}"><i
                                                 class="icon-feather-chevron-right"></i> Freelancer Manage Tasks</a></li>
-                                    <li><a href="{{ route('user/dashboard') }}"><i
+                                    <li><a href="{{ route(strtolower(Auth::user()->type).'/dashboard') }}"><i
                                                 class="icon-feather-chevron-right"></i> Freelancer Manage Bidders</a>
                                     </li>
-                                    <li><a href="{{ route('user/dashboard') }}"><i
+                                    <li><a href="{{ route(strtolower(Auth::user()->type).'/dashboard') }}"><i
                                                 class="icon-feather-chevron-right"></i> Freelancer Active Bids</a></li>
-                                    <li><a href="{{ route('user/dashboard') }}"><i
+                                    <li><a href="{{ route(strtolower(Auth::user()->type).'/dashboard') }}"><i
                                                 class="icon-feather-chevron-right"></i> Freelancer Post Bids</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('user/reviews') }}"><i
+                            <li><a href="{{ route(strtolower(Auth::user()->type).'/reviews') }}"><i
                                         class="icon-material-outline-rate-review"></i>Reviews</a></li>
-                            <li><a href="{{ route('user/my-profile') }}"><i class="icon-feather-user"></i> My Profile</a>
+                            <li><a href="{{ route(strtolower(Auth::user()->type).'/my-profile') }}"><i class="icon-feather-user"></i> My Profile</a>
                             </li>
                         </ul>
                     </div>

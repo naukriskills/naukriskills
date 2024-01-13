@@ -77,8 +77,6 @@
     </div>
   </section>
 </div>
-
-
 <!-- .modal -->
 <div class="modal fade" id="addModel">
   <div class="modal-dialog modal-default">

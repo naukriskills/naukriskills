@@ -12,7 +12,7 @@
       @guest
       @if (Route::has('login'))
       <div class="utf-header-widget-item">
-      <a href="#utf-signin-dialog-block" class="popup-with-zoom-anim log-in-button"><i class="icon-feather-log-in"></i>
+      <a href="{{ route('login') }}" class=" log-in-button"><i class="icon-feather-log-in"></i>
         <span>Sign In</span></a>
         </div>
         @endif
@@ -29,7 +29,7 @@
     </div>
     <div class=" utf-header-notifications-dropdown-block">
       <ul class="utf-user-menu-dropdown-nav">
-        <li><a href="<?=strtolower(Auth::user()->type);?>/dashboard"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+        <li><a href="{{ url(strtolower(Auth::user()->type).'/dashboard') }}"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
               class="icon-material-outline-power-settings-new"></i> {{ __('Logout') }}</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -27,9 +27,9 @@
                             <label for="two-step"><span class="checkbox-icon"></span> Remember Me</label>
                         </div>
                         <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
-                    </form>
-                    <button class="button full-width utf-button-sliding-icon ripple-effect" type="submit"
+                        <button class="button full-width utf-button-sliding-icon ripple-effect" type="submit"
                         form="login-form">Log In <i class="icon-feather-chevron-right"></i></button>
+                    </form>                    
                     <div class="utf-social-login-separator-item"><span>Or Login in With</span></div>
                     <div class="utf-social-login-buttons-block">
                         <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i>

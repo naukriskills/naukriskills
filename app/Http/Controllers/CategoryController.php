@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
+    function __construct()
+    {
+        //  $this->middleware('permission:category-create|category-edit|category-delete|category-publish', ['only' => ['index','store']]);
+        //  $this->middleware('permission:category-create', ['only' => ['store']]);
+        //  $this->middleware('permission:category-edit', ['only' => ['edit','update','grant','grantStore']]);
+        //  $this->middleware('permission:category-delete', ['only' => ['destroy']]);
+        //  $this->middleware('permission:category-publish', ['only' => ['status']]);
+    }
     /**
      * Display a listing of the resource.
      *

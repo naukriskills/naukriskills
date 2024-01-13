@@ -11,6 +11,14 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+  function __construct()
+  {
+       $this->middleware('permission:user-create|user-edit|user-delete|user-publish', ['only' => ['index','store']]);
+       $this->middleware('permission:user-create', ['only' => ['store']]);
+       $this->middleware('permission:user-edit', ['only' => ['edit','update','grant','grantStore']]);
+       $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+       $this->middleware('permission:user-publish', ['only' => ['status']]);
+  }
   public function index(Request $request)
   {
     $roles = Role::orderBy('id', 'DESC')->get();
@@ -52,9 +60,9 @@ class UserController extends Controller
     $user->password = Hash::make($data['password']);
     if ($user->save()) {
       $user->assignRole($data['role']);
-      return redirect()->route('users.index')->with(['status' => 'success', 'message' => 'Insert Operation Successfully Done.']);
+      return redirect()->route('admin.users.index')->with(['status' => 'success', 'message' => 'Insert Operation Successfully Done.']);
     } else {
-      return redirect()->route('users.index')->with(['status' => 'error', 'message' => 'Something Wrong!. Please Try Again']);
+      return redirect()->route('admin.users.index')->with(['status' => 'error', 'message' => 'Something Wrong!. Please Try Again']);
     }
   }
 
@@ -71,7 +79,7 @@ class UserController extends Controller
     </button>
   </div>
   <div class="modal-body">
-    <form action="' . route("users.update") . '" method="POST">
+    <form action="' . route("admin.users.update") . '" method="POST">
     <input type="hidden" name="_token" value="' . csrf_token() . '" />
     <input type="hidden" name="id" value="' . $res->id . '" />
       <div class="card-body">
@@ -79,9 +87,9 @@ class UserController extends Controller
           <label for="location">Assign Role</label>
           <select type="text" class="form-control" name="role">
           <option value="' . $roles_name . '" hidden>' . $roles_name . '</option>';
-    foreach ($roles as $role) {
-      echo '<option value="' . $role->name . '">' . $role->name . '</option>';
-    }
+          foreach ($roles as $role) {
+            echo '<option value="' . $role->name . '">' . $role->name . '</option>';
+          }
     echo '</select>
         </div>
         <div class="form-group">
@@ -114,13 +122,13 @@ class UserController extends Controller
       $user->email = $data['email'];
       if ($user->save()) {
         $user->syncRoles($data['role']);
-        return redirect()->route('users.index')->with(['status' => 'success', 'message' => 'Update Operation Successfully Done.']);
+        return redirect()->route('admin.users.index')->with(['status' => 'success', 'message' => 'Update Operation Successfully Done.']);
       } else {
-        return redirect()->route('users.index')->with(['status' => 'error', 'message' => 'Something Wrong!. Please Try Again']);
+        return redirect()->route('admin.users.index')->with(['status' => 'error', 'message' => 'Something Wrong!. Please Try Again']);
       }
     } catch (\Throwable $e) {
       // dd($e->getMessage());
-      return redirect()->route('users.index')->with(['status' => 'error', 'message' => $e->getMessage()]);
+      return redirect()->route('admin.users.index')->with(['status' => 'error', 'message' => $e->getMessage()]);
     }
   }
 

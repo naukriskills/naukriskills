@@ -93,23 +93,24 @@ Route::group(['middleware' => ['auth','useraccess:Admin']],function(){
     });
 });
 
-/*--------------- All Superadmin Routes List---------------*/
-Route::middleware(['auth', 'useraccess:Superadmin'])->group(function () {
+// /*--------------- All Superadmin Routes List---------------*/
+// Route::middleware(['auth', 'useraccess:Superadmin'])->group(function () {
   
-    Route::get('/superadmin/dashboard', [HomeController::class, 'superadminIndex'])->name('superadmin/dashboard');
-});
+//     Route::get('/superadmin/dashboard', [HomeController::class, 'superadminIndex'])->name('superadmin/dashboard');
+    
+// });
 
-/*--------------- All Superadmin Routes List---------------*/
-Route::middleware(['auth', 'useraccess:Company'])->group(function () {
+// /*--------------- All Superadmin Routes List---------------*/
+// Route::middleware(['auth', 'useraccess:Company'])->group(function () {
   
-    Route::get('/company/dashboard', [HomeController::class, 'companyIndex'])->name('company/dashboard');
-});
+//     Route::get('/company/dashboard', [HomeController::class, 'companyIndex'])->name('company/dashboard');
+// });
 
-/*--------------- All Superadmin Routes List---------------*/
-Route::middleware(['auth', 'useraccess:Partner'])->group(function () {
+// /*--------------- All Superadmin Routes List---------------*/
+// Route::middleware(['auth', 'useraccess:Partner'])->group(function () {
   
-    Route::get('/partner/dashboard', [HomeController::class, 'partnerHome'])->name('partner/dashboard');
-});
+//     Route::get('/partner/dashboard', [HomeController::class, 'partnerHome'])->name('partner/dashboard');
+// });
 
 
 

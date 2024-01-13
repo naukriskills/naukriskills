@@ -31,17 +31,17 @@
                     <div class="utf-account-type">
                         <div>
                             <input type="radio" name="utf-account-type-radio" id="freelancer-radio"
-                                class="utf-account-type-radio" checked />
+                                class="utf-account-type-radio" value="User" checked />
                             <label for="freelancer-radio" title="Employer" data-tippy-placement="top"
                                 class="utf-ripple-effect-dark"><i class="icon-material-outline-business-center"></i>
-                                Employer</label>
+                                Candidate</label>
                         </div>
                         <div>
-                            <input type="radio" name="utf-account-type-radio" id="employer-radio"
+                            <input type="radio" name="utf-account-type-radio" id="employer-radio" value="Company" 
                                 class="utf-account-type-radio" />
                             <label for="employer-radio" title="Candidate" data-tippy-placement="top"
                                 class="utf-ripple-effect-dark"><i class="icon-material-outline-account-circle"></i>
-                                Candidate</label>
+                                Employer</label>
                         </div>
                     </div>
                     <div class="utf-no-border">
