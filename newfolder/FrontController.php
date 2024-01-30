@@ -54,16 +54,16 @@ class FrontController extends Controller
     }
 
     public function contactus() {
-    //     $mailData = [
-    //         'title' => 'Mail from fairsearches.com',
-    //         'body' => 'This is for testing email using smtp.'
-    //     ];
-    //     Mail::to('dvpal2012@gmail.com')->send(new MyEmails($mailData));
-    //     if (Mail::failures()) {
-    //         return response()->Fail('Sorry! Please try again latter');
-    //    }else{
-    //         return response()->success('Great! Successfully send in your mail');
-    //       }
+        $mailData = [
+            'title' => 'Mail from fairsearches.com',
+            'body' => 'This is for testing email using smtp.'
+        ];
+        Mail::to('dvpal2012@gmail.com')->send(new MyEmails($mailData));
+        if (Mail::failures()) {
+            return response()->Fail('Sorry! Please try again latter');
+       }else{
+            return response()->success('Great! Successfully send in your mail');
+          }
          return view('front.contact-us');
     }
     
